@@ -1,10 +1,17 @@
 name1 = "larry"
-name2 = "curly"
-name3 = "moe"
-players = "\n\t#{name1}\n\t#{name2}\n\t#{name3}"
 health1 = 60
+name2 = "curly"
+health2 = 125
+name3 = "moe"
+health3 = 100
+name4 = "shemp"
+health4 = 90
 
-puts "Players : #{players}"
+health2 = health1
+health1 = 30
 
-larry_current_health = puts "#{name1}'s health is #{health1}"
+puts "#{name1.capitalize} has a health of #{health1}.
+#{name2.upcase} has a health of #{health2}.
+#{name3.capitalize.center(20,"*")} has a health of #{health3}
+#{name4.capitalize.ljust(20,".")} has a health of #{health4}."
 
