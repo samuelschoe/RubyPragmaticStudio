@@ -1,13 +1,20 @@
+def project_status (project,funding=0)
+	"As of #{current_time}, #{project} has #{funding} in funding"
+end
+
+# %c is current date and timed in the .strftime method. %I:%M:%S is hour/min/sec, respectivly. 
+def current_time
+	right_now = Time.new
+	the_time = right_now.strftime("%c")
+end
+
 project1 = "ABC"
 project2 = "LMN"
 project3 = "XYZ"
 funding1 = 1000
 funding2 = 2586
 funding3 = 44225
-projects = "Projects: \n\t#{project1}\n\t#{project2}\n\t#{project3}"
 
-
-puts "#{projects}
-Project #{project1.rjust(13,"*$%")} has $#{funding1} in funding
-Project #{project2.reverse.center(6)} has $#{funding2} in funding
-Project #{project3.replace "chickenpants"} has $#{funding3} in funding"
+puts project_status(project1,funding1)
+puts project_status(project2,funding2)
+puts project_status(project3,funding3)
