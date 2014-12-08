@@ -1,17 +1,14 @@
-name1 = "larry"
-health1 = 60
-name2 = "curly"
-health2 = 125
-name3 = "moe"
-health3 = 100
-name4 = "shemp"
-health4 = 90
 
-health2 = health1
-health1 = 30
+def say_hello(name, health=100)
+  "I'm #{name.capitalize} and my health is #{health} as of #{time}"
+end
 
-puts "#{name1.capitalize} has a health of #{health1}.
-#{name2.upcase} has a health of #{health2}.
-#{name3.capitalize.center(20,"*")} has a health of #{health3}
-#{name4.capitalize.ljust(20,".")} has a health of #{health4}."
+def time
+	current_time = Time.new
+	weekday = current_time.strftime("%I:%M:%S")
+end	
 
+puts say_hello("larry", 60) 
+puts say_hello("curly", 125)
+puts say_hello("moe")
+puts say_hello("shemp", 90)
