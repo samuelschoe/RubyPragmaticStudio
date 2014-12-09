@@ -1,14 +1,36 @@
+class Player 
+	def initialize (name, health=100)
+		@name = name.capitalize
+		@health = health
+	end
 
-def say_hello(name, health=100)
-  "I'm #{name.capitalize} and my health is #{health} as of #{time}"
+	def to_s
+		"I'm #{@name} with a health of #{@health}."
+	end
+
+	def blam
+		@health -= 10
+		puts "#{@name} got blammed!" 
+	end
+
+	def w00ted
+		@health += 15
+		puts "#{@name} got w00ted!"
+	end
+
+
 end
 
-def time
-	current_time = Time.new
-	weekday = current_time.strftime("%I:%M:%S")
-end	
+player1 = Player.new("moe")
+player2 = Player.new("larry",60)
+player3 = Player.new("Curly",125)
 
-puts say_hello("larry", 60) 
-puts say_hello("curly", 125)
-puts say_hello("moe")
-puts say_hello("shemp", 90)
+puts player1
+puts player2
+puts player3
+
+player3.blam
+puts player3
+
+player3.w00ted
+puts player3
