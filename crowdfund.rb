@@ -1,4 +1,9 @@
 class Project
+
+	attr_reader :intialfund,:targetfund,:distancefromgoal
+	attr_accessor :name
+
+
 	def initialize(name,intialfund,targetfund)
 		@name = name.capitalize
 		@intialfund = intialfund
@@ -33,3 +38,5 @@ class Project
 	puts project1
 	puts project1.removefunds(30)
 	puts project1.addfunds(4556)
+
+    
