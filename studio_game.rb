@@ -43,10 +43,22 @@ puts player3
 player3.w00ted
 puts player3
 
-puts player1.inspect
-puts player1.health
-puts player2.health
-puts player3.health
+players = [player1,player2,player3]
 
-player2.name="lawerence"
-puts player2.name
+puts "There are #{players.size} players in the game"
+
+players.each do |x|
+	puts x
+end
+
+players.each do |x|
+	puts x.health
+end
+
+
+players.pop
+player4 = Player.new("Shemp", 90)
+players.push(player4)
+puts players
+
+
