@@ -5,7 +5,7 @@ class Project
 
 
 	def initialize(name,intialfund,targetfund)
-		@name = name.capitalize
+		@name = name
 		@intialfund = intialfund
 		@targetfund = targetfund
 		@distancefromgoal = targetfund - intialfund
@@ -30,7 +30,65 @@ class Project
 		puts "You've lost #{@removefunds}. Your total funds are now #{@intialfund}. You are #{@distancefromgoal} distance from goal."
 	end
 
-		
+	class Container
+
+	attr_reader	:title
+	
+	def initialize(title)
+		@title = title
+		@projects = [] 
+	end
+
+	def add_project(new_project)
+		@projects << new_project
+	end 
+
+	def request_funding
+		@projects.each do |x|
+			puts x 
+		end
+
+		@projects.each do |x|
+			x.addfunds(100)
+			puts x
+		end
+	end
+
+
+	end
+
+
+	cheesenoodles = Project.new(cheesenoodles,4528,225478)
+
+	VCLovesme = Container.new("VCLovesme")
+	VCLovesme.add_project(cheesenoodles)
+	VCLovesme.request_funding
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	end
 
 	project1=Project.new("billyball",200,5000)
