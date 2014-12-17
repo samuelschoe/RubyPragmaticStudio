@@ -1,61 +1,5 @@
-class Project
+require_relative 'container'
 
-	attr_reader :intialfund,:targetfund,:distancefromgoal
-	attr_accessor :name
-
-
-	def initialize(name,intialfund,targetfund)
-		@name = name
-		@intialfund = intialfund
-		@targetfund = targetfund
-		@distancefromgoal = targetfund - intialfund
-	end
-	
-	def to_s 
-	  "Project #{@name} has #{@intialfund} in funding toward a goal of #{@targetfund}."
-	end
-	
-	def addfunds(newfunds)
-		@newfunds = newfunds
-		@intialfund += newfunds
-		@distancefromgoal = @targetfund - @intialfund
-		puts "You've gained #{@newfunds}. Your total funds are now #{@intialfund}. You are #{@distancefromgoal} distance from goal."
-
-	end
-
-	def removefunds(removefunds)
-		@removefunds = removefunds
-		@intialfund -= removefunds
-		@distancefromgoal = @targetfund - @intialfund
-		puts "You've lost #{@removefunds}. Your total funds are now #{@intialfund}. You are #{@distancefromgoal} distance from goal."
-	end
-
-	class Container
-
-	attr_reader	:title
-	
-	def initialize(title)
-		@title = title
-		@projects = [] 
-	end
-
-	def add_project(new_project)
-		@projects << new_project
-	end 
-
-	def request_funding
-		@projects.each do |x|
-			puts x 
-		end
-
-		@projects.each do |x|
-			x.addfunds(100)
-			puts x
-		end
-	end
-
-
-	end
 
 
 	cheesenoodles = Project.new(cheesenoodles,4528,225478)
@@ -65,31 +9,6 @@ class Project
 	VCLovesme.request_funding
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	end
 
 	project1=Project.new("billyball",200,5000)
 	project2=Project.new("bopaboo",2003,34000)
