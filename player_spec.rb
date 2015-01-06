@@ -1,55 +1,55 @@
-#each test just creates and object and runs the method. Since we know what the output should be, if the results of that vary with the listed outcome, we have cause a problem. 
+#each test just creates  object and runs the method. Since we know what the output should be, if the results of that vary with the listed outcome, we have cause a problem. 
 
 require_relative 'player'
 
+
+
+
 describe Player do 
 
-it "has a capitalized name" do
-	player = Player.new("larry",150)
+	before do
+	@intial_health = 150
+	@player = Player.new("bill", intial_health)
+end
 
-	player.name.should == "Larry"
+it "has a capitalized name" do
+	
+	@player.name.should == "Larry"
 end
 
 it "had a an intial health" do
-	player = Player.new("larry",150)
+	
 
-	player.health.should == 150
+	@player.health.should == 150
 end
 
 it "has has a string represnetation" do
-	player = Player.new("larry",150)
-
-	player.to_s.should == "I'm Larry with a health of 150 and a score of 155."
+	
+	@player.to_s.should == "I'm Larry with a health of 150 and a score of 155."
 
 end
 
 it "should computer a score as the sum of its health and length of name" do
-	player = Player.new("larry",150)
+	
 
-	player.score.should == 155
+	@player.score.should == 155
 end
 
 it " being wo00t'ed should raise health by 15" do
-	intial_health = 150
-	player = Player.new("bill",intial_health)
-	player.w00ted
 	
-	player.health.should == 165
+	@player.w00ted
+	
+	player.health.should == @intial_health + 15
 end
+
 
 it "being blam'ed should lower the players health by 10 " do
-	intial_health = 150
-	player = Player.new("bill",intial_health)
-	player.blam
+	
+	@player.blam
 
-	player.health.should == 140
+	player.health.should == @intial_health - 10
+
 end
-
-
-
-
-
-
 
 
 
