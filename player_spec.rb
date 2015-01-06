@@ -1,3 +1,5 @@
+#each test just creates and object and runs the method. Since we know what the output should be, if the results of that vary with the listed outcome, we have cause a problem. 
+
 require_relative 'player'
 
 describe Player do 
