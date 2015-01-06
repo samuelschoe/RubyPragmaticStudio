@@ -27,6 +27,28 @@ it "should computer a score as the sum of its health and length of name" do
 	player.score.should == 155
 end
 
+it " being wo00t'ed should raise health by 15" do
+	intial_health = 150
+	player = Player.new("bill",intial_health)
+	player.w00ted
+	
+	player.health.should == 165
+end
+
+it "being blam'ed should lower the players health by 10 " do
+	intial_health = 150
+	player = Player.new("bill",intial_health)
+	player.blam
+
+	player.health.should == 140
+end
+
+
+
+
+
+
+
 
 
 end
