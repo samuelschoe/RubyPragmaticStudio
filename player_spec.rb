@@ -1,57 +1,48 @@
-#each test just creates  object and runs the method. Since we know what the output should be, if the results of that vary with the listed outcome, we have cause a problem. 
+#each test just creates object and runs the method. Since we know what the output should be, if the results of that vary with the listed outcome, we have cause a problem. 
 
 require_relative 'player'
 
+describe Player do
 
-
-
-describe Player do 
-
-	before do
-	@intial_health = 150
-	@player = Player.new("bill", intial_health)
+before do
+ @player = Player.new("bilbo",150)
+ @initial_health = 150
+ $stdout = StringIO.new
 end
 
-it "has a capitalized name" do
-	
-	@player.name.should == "Larry"
-end
+#the below unit test is left in the unrefacored format. It works without a before..do statment. Other tests are more optimized. 	
+it "has a capaitalized name" do
+ player = Player.new("bilbo",150)
 
-it "had a an intial health" do
-	
-
-	@player.health.should == 150
-end
-
-it "has has a string represnetation" do
-	
-	@player.to_s.should == "I'm Larry with a health of 150 and a score of 155."
+ player.name.should == "Bilbo"
 
 end
 
-it "should computer a score as the sum of its health and length of name" do
-	
+it "has a string representation" do
 
-	@player.score.should == 155
-end
-
-it " being wo00t'ed should raise health by 15" do
-	
-	@player.w00ted
-	
-	player.health.should == @intial_health + 15
-end
-
-
-it "being blam'ed should lower the players health by 10 " do
-	
-	@player.blam
-
-	player.health.should == @intial_health - 10
+@player.to_s.should == "I'm Bilbo with a health of 150 and a score of 155."
 
 end
 
+it "computes a score as the sum of its health and the legneth of name" do
 
+@player.score.should == 155
+
+end
+
+it "increases health by 15 when w00ted" do
+
+@player.w00ted
+
+@player.health.should == @initial_health + 15
+
+end
+
+it "decrease health by 10 when blammed" do 
+
+@player.blam
+
+@player.health.should == @initial_health - 10
 
 end
 
@@ -63,22 +54,4 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+end
